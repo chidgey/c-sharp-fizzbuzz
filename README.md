@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/chidgey/c-sharp-fizzbuzz.svg?branch=master)](https://travis-ci.org/chidgey/c-sharp-fizzbuzz)
+[![Build Status](https://travis-ci.com/chidgey/c-sharp-fizzbuzz.svg?branch=master)](https://travis-ci.com/chidgey/c-sharp-fizzbuzz)
 
 # FizzBuzz Demo
 
