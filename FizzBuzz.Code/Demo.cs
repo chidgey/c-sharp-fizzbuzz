@@ -19,12 +19,17 @@ namespace FizzBuzz.Code
         private bool IsNumberMultipleOfThreeAndFive(int number) {
             return IsNumberMultipleOfThree(number) & IsNumberMultipleOfFive(number);
         }
-        #endregion
+        
+        private bool HasNumberGotThreeInIt(int number) {
+            return number.ToString().Contains("3");
+        }
 
         private IEnumerable<string> GetCollection(int from, int to)
         {
             for (var i = from; i <= to; i++) {
-                if (IsNumberMultipleOfThreeAndFive(i))
+                if (HasNumberGotThreeInIt(i))
+                    yield return "lucky";
+                else if (IsNumberMultipleOfThreeAndFive(i))
                     yield return "fizzbuzz";
                 else if (IsNumberMultipleOfFive(i))
                     yield return "buzz";
@@ -34,6 +39,7 @@ namespace FizzBuzz.Code
                     yield return i.ToString();
             }
         }
+        #endregion
 
         public string Print(int from = 1, int to = 100)
         {
