@@ -1,7 +1,9 @@
 language: csharp
 mono: none
-dotnet: 2.2.103
-solution: FizzBuzz.sln
+sudo: required
+dist: xenial
+dotnet: 2.2
 script:
-  - dotnet restore
-  - dotnet test
+    - dotnet restore
+    - dotnet build
+    - dotnet test
