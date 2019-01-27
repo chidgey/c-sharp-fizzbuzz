@@ -9,3 +9,5 @@ I went for using a little Linq to make manipulating the collection flexible, wit
 Seperation of the fizzbuzz code from NUnit.
 
 Created using Visual Studio Code v1.30.2 and .NET Core v2.2.103, built on Travis-CI.
+
+Version number: c52851081674597ecf5d5a4ed3bf750b39e3f8e5

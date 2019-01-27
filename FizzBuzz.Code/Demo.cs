@@ -6,11 +6,11 @@ namespace FizzBuzz.Code
 {
     public class Demo
     {
+        private IEnumerable<string> fizzBuzzSequence;
+
         #region Private Helper Methods
 
-        private bool IsNumberMultipleOfThree(int number) {
-            return number % 3 == 0;
-        }
+        private bool IsNumberMultipleOfThree(int number) => number % 3 == 0;
 
         private bool IsNumberMultipleOfFive(int number) {
             return number % 5 == 0;
@@ -39,11 +39,25 @@ namespace FizzBuzz.Code
                     yield return i.ToString();
             }
         }
+
+        private string GetCountOf(string searchTerm) {
+            var count = fizzBuzzSequence.Count(x => x.Equals(searchTerm));
+            return string.Concat(searchTerm, ": ", count);
+        }
+
+        private string GetCountOfIntegers() {
+            var count = fizzBuzzSequence.Count(x => Char.IsNumber(x, 0));
+            return string.Concat("integer: ", count);
+        }
         #endregion
 
         public string Print(int from = 1, int to = 100)
         {
-            return string.Join(" ", GetCollection(from, to).ToArray());
+            fizzBuzzSequence =  GetCollection(from, to);
+            var result = string.Join(" ", fizzBuzzSequence);
+            result += string.Join(" ", "", GetCountOf("fizz"), GetCountOf("buzz"), 
+                GetCountOf("fizzbuzz"), GetCountOf("lucky"), GetCountOfIntegers());
+            return result;
         }
     }
 }
